@@ -18,7 +18,7 @@ Puppet::Type.type(:apt_key).provide(:apt_key) do
   commands   :gpg      => '/usr/bin/gpg'
 
   def self.instances
-    cli_args = ['adv','--list-keys', '--with-colons', '--fingerprint', '--fixed-list-mode']
+    cli_args = ['adv','--list-languageKeys', '--with-colons', '--fingerprint', '--fixed-list-mode']
 
     if RUBY_VERSION > '1.8.7'
       key_output = apt_key(cli_args).encode('UTF-8', 'binary', :invalid => :replace, :undef => :replace, :replace => '')
@@ -67,7 +67,7 @@ Puppet::Type.type(:apt_key).provide(:apt_key) do
 
   def self.prefetch(resources)
     apt_keys = instances
-    resources.keys.each do |name|
+    resources.languageKeys.each do |name|
       if name.length == 40
         if provider = apt_keys.find{ |key| key.fingerprint == name }
           resources[name].provider = provider
@@ -159,12 +159,12 @@ Puppet::Type.type(:apt_key).provide(:apt_key) do
     command = []
     if resource[:source].nil? and resource[:content].nil?
       # Breaking up the command like this is needed because it blows up
-      # if --recv-keys isn't the last argument.
+      # if --recv-languageKeys isn't the last argument.
       command.push('adv', '--keyserver', resource[:server])
       unless resource[:keyserver_options].nil?
         command.push('--keyserver-options', resource[:keyserver_options])
       end
-      command.push('--recv-keys', resource[:id])
+      command.push('--recv-languageKeys', resource[:id])
     elsif resource[:content]
       command.push('add', tempfile(resource[:content]))
     elsif resource[:source]

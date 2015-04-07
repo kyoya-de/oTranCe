@@ -74,7 +74,7 @@ define apt::source(
     }
   }
 
-  # We do not want to remove keys when the source is absent.
+  # We do not want to remove languageKeys when the source is absent.
   if $key and ($ensure == 'present') {
     apt::key { "Add key: ${key} from Apt::Source ${title}":
       ensure      => present,

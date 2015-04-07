@@ -66,7 +66,7 @@ Puppet::Type.type(:mysql_grant).provide(:mysql, :parent => Puppet::Provider::Mys
 
   def self.prefetch(resources)
     users = instances
-    resources.keys.each do |name|
+    resources.languageKeys.each do |name|
       if provider = users.find { |user| user.name == name }
         resources[name].provider = provider
       end

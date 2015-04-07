@@ -13,7 +13,7 @@ CENTOS_GPG_KEY_FILE            = 'RPM-GPG-KEY-CentOS-6'
 
 SHOULD_NEVER_EXIST_ID          = '4BD6EC30'
 
-KEY_CHECK_COMMAND              = "apt-key adv --list-keys --with-colons --fingerprint | grep "
+KEY_CHECK_COMMAND              = "apt-key adv --list-languageKeys --with-colons --fingerprint | grep "
 PUPPETLABS_KEY_CHECK_COMMAND   = "#{KEY_CHECK_COMMAND} #{PUPPETLABS_GPG_KEY_FINGERPRINT}"
 CENTOS_KEY_CHECK_COMMAND       = "#{KEY_CHECK_COMMAND} #{CENTOS_GPG_KEY_FINGERPRINT}"
 
@@ -87,7 +87,7 @@ describe 'apt_key' do
 
         # Install the key first
         shell("apt-key adv --keyserver keyserver.ubuntu.com \
-              --recv-keys #{CENTOS_GPG_KEY_FINGERPRINT}")
+              --recv-languageKeys #{CENTOS_GPG_KEY_FINGERPRINT}")
         shell(CENTOS_KEY_CHECK_COMMAND)
 
         # Time to remove it using Puppet
@@ -98,7 +98,7 @@ describe 'apt_key' do
               :acceptable_exit_codes => [1])
 
         shell("apt-key adv --keyserver keyserver.ubuntu.com \
-              --recv-keys #{CENTOS_GPG_KEY_FINGERPRINT}")
+              --recv-languageKeys #{CENTOS_GPG_KEY_FINGERPRINT}")
       end
     end
 
@@ -113,7 +113,7 @@ describe 'apt_key' do
 
         # Install the key first
         shell("apt-key adv --keyserver keyserver.ubuntu.com \
-              --recv-keys #{PUPPETLABS_GPG_KEY_LONG_ID}")
+              --recv-languageKeys #{PUPPETLABS_GPG_KEY_LONG_ID}")
         shell(PUPPETLABS_KEY_CHECK_COMMAND)
 
         # Time to remove it using Puppet

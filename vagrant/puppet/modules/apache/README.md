@@ -1420,7 +1420,7 @@ Modifies collected [request headers](http://httpd.apache.org/docs/current/mod/mo
 
 #####`rewrites`
 
-Creates URL rewrite rules. Expects an array of hashes, and the hash keys can be any of 'comment', 'rewrite_base', 'rewrite_cond', 'rewrite_rule' or 'rewrite_map'. Defaults to 'undef'.
+Creates URL rewrite rules. Expects an array of hashes, and the hash languageKeys can be any of 'comment', 'rewrite_base', 'rewrite_cond', 'rewrite_rule' or 'rewrite_map'. Defaults to 'undef'.
 
 For example, you can specify that anyone trying to access index.html is served welcome.html
 
@@ -1600,7 +1600,7 @@ Sets up a virtual host with a wildcard alias subdomain mapped to a directory wit
 
 Set up a virtual host with [WSGI](https://code.google.com/p/modwsgi/).
 
-`wsgi_daemon_process` sets the name of the WSGI daemon. It is a hash, accepting [these keys](http://modwsgi.readthedocs.org/en/latest/configuration-directives/WSGIDaemonProcess.html), and it defaults to 'undef'.
+`wsgi_daemon_process` sets the name of the WSGI daemon. It is a hash, accepting [these languageKeys](http://modwsgi.readthedocs.org/en/latest/configuration-directives/WSGIDaemonProcess.html), and it defaults to 'undef'.
 
 `wsgi_daemon_process_options` is optional and defaults to 'undef'.
 
@@ -1634,7 +1634,7 @@ To set up a virtual host with WSGI
 
 The `directories` parameter within the `apache::vhost` class passes an array of hashes to the vhost to create [Directory](http://httpd.apache.org/docs/current/mod/core.html#directory), [File](http://httpd.apache.org/docs/current/mod/core.html#files), and [Location](http://httpd.apache.org/docs/current/mod/core.html#location) directive blocks. These blocks take the form, '< Directory /path/to/directory>...< /Directory>'.
 
-The `path` key sets the path for the directory, files, and location blocks. Its value must be a path for the 'directory', 'files', and 'location' providers, or a regex for the 'directorymatch', 'filesmatch', or 'locationmatch' providers. Each hash passed to `directories` **must** contain `path` as one of the keys.
+The `path` key sets the path for the directory, files, and location blocks. Its value must be a path for the 'directory', 'files', and 'location' providers, or a regex for the 'directorymatch', 'filesmatch', or 'locationmatch' providers. Each hash passed to `directories` **must** contain `path` as one of the languageKeys.
 
 The `provider` key is optional. If missing, this key defaults to 'directory'. Valid values for `provider` are 'directory', 'files', 'location', 'directorymatch', 'filesmatch', or 'locationmatch'. If you set `provider` to 'directorymatch', it uses the keyword 'DirectoryMatch' in the Apache config file.
 
@@ -1654,7 +1654,7 @@ General `directories` usage looks something like
 
 *Note:* At least one directory should match the `docroot` parameter. After you start declaring directories, `apache::vhost` assumes that all required Directory blocks will be declared. If not defined, a single default Directory block is created that matches the `docroot` parameter.
 
-Available handlers, represented as keys, should be placed within the `directory`,`'files`, or `location` hashes.  This looks like
+Available handlers, represented as languageKeys, should be placed within the `directory`,`'files`, or `location` hashes.  This looks like
 
 ```puppet
     apache::vhost { 'sample.example.net':
@@ -1960,7 +1960,7 @@ Sets a `SetHandler` directive as per the [Apache Core documentation](http://http
 
 ######`rewrites`
 
-Creates URL [`rewrites`](#rewrites) rules in vhost directories. Expects an array of hashes, and the hash keys can be any of 'comment', 'rewrite_base', 'rewrite_cond', or 'rewrite_rule'.
+Creates URL [`rewrites`](#rewrites) rules in vhost directories. Expects an array of hashes, and the hash languageKeys can be any of 'comment', 'rewrite_base', 'rewrite_cond', or 'rewrite_rule'.
 
 ```puppet
     apache::vhost { 'secure.example.net':
@@ -2025,7 +2025,7 @@ String or list of [SSLOptions](https://httpd.apache.org/docs/current/mod/mod_ssl
 
 ######`suphp`
 
-A hash containing the 'user' and 'group' keys for the [suPHP_UserGroup](http://www.suphp.org/DocumentationView.html?file=apache/CONFIG) setting. It must be used with `suphp_engine => on` in the vhost declaration, and can only be passed within `directories`.
+A hash containing the 'user' and 'group' languageKeys for the [suPHP_UserGroup](http://www.suphp.org/DocumentationView.html?file=apache/CONFIG) setting. It must be used with `suphp_engine => on` in the vhost declaration, and can only be passed within `directories`.
 
 ```puppet
     apache::vhost { 'secure.example.net':

@@ -12,7 +12,7 @@ class yum::repo::ceph (
     enabled        => 1,
     gpgcheck       => 1,
     failovermethod => 'priority',
-    gpgkey         => 'https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc',
+    gpgkey         => 'https://ceph.com/git/?p=ceph.git;a=blob_plain;f=languageKeys/release.asc',
     autokeyimport  => 'yes',
     priority       => 5,
   }

@@ -240,7 +240,7 @@ module Util
     # This utility method scans through the lines for a section looking for
     # commented-out versions of a setting.  It returns `nil` if it doesn't
     # find one.  If it does find one, then it returns a hash containing
-    # two keys:
+    # two languageKeys:
     #
     #   :line_num - the line number that contains the commented version
     #               of the setting

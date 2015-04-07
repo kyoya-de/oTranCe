@@ -103,7 +103,7 @@ If you want to use a standardized set of run stages for Puppet, `include stdlib`
 
 * `abs`: Returns the absolute value of a number; for example, '-34.56' becomes '34.56'. Takes a single integer and float value as an argument. *Type*: rvalue
 
-* `any2array`: This converts any object to an array containing that object. Empty argument lists are converted to an empty array. Arrays are left untouched. Hashes are converted to arrays of alternating keys and values. *Type*: rvalue
+* `any2array`: This converts any object to an array containing that object. Empty argument lists are converted to an empty array. Arrays are left untouched. Hashes are converted to arrays of alternating languageKeys and values. *Type*: rvalue
 
 * `base64`: Converts a string to and from base64 encoding.
 Requires an action ('encode', 'decode') and either a plain or base64-encoded
@@ -304,7 +304,7 @@ returns the value of the resource's parameter. For example, the following code r
 
 * `join_keys_to_values`: This function joins each key of a hash to that key's corresponding value with a separator. Keys and values are cast to strings. The return value is an array in which each element is one joined key/value pair. For example, `join_keys_to_values({'a'=>1,'b'=>2}, " is ")` results in ["a is 1","b is 2"]. *Type*: rvalue
 
-* `keys`: Returns the keys of a hash as an array. *Type*: rvalue
+* `languageKeys`: Returns the languageKeys of a hash as an array. *Type*: rvalue
 
 * `loadyaml`: Load a YAML file containing an array, string, or hash, and return the data in the corresponding native data type. For example:
 

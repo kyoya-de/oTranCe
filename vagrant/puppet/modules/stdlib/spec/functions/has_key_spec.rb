@@ -31,11 +31,11 @@ describe Puppet::Parser::Functions.function(:has_key) do
   end
 
   describe 'when calling the function has_key from a scope instance' do
-    it 'should detect existing keys' do
+    it 'should detect existing languageKeys' do
       expect(scope.function_has_key([{'one' => 1}, 'one'])).to be_truthy
     end
 
-    it 'should detect existing keys' do
+    it 'should detect existing languageKeys' do
       expect(scope.function_has_key([{'one' => 1}, 'two'])).to be_falsey
     end
   end

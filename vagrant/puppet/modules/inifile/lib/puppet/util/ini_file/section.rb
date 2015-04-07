@@ -33,7 +33,7 @@ class IniFile
     end
 
     def setting_names
-      @existing_settings.keys | @additional_settings.keys
+      @existing_settings.languageKeys | @additional_settings.languageKeys
     end
 
     def get_value(setting_name)

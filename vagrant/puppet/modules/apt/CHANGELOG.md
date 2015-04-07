@@ -9,7 +9,7 @@ This release includes many important features, including support for full finger
 - The apt module will now throw warnings if you don't use full fingerprints for `apt_key`s
 
 ####Features
-- Use gpg to check keys to work around https://bugs.launchpad.net/ubuntu/+source/gnupg2/+bug/1409117 (MODULES-1675)
+- Use gpg to check languageKeys to work around https://bugs.launchpad.net/ubuntu/+source/gnupg2/+bug/1409117 (MODULES-1675)
 - Add 'oldstable' to the default update origins for wheezy
 - Add utopic, vivid, and cumulus compatibility
 - Add support for full fingerprints
@@ -42,7 +42,7 @@ This release includes several new features, documentation and test improvements,
 - Update module to work with Linux Mint
 - Documentation updates
 - Future parser / strict variables support
-- Improved support for long GPG keys
+- Improved support for long GPG languageKeys
 - New parameters!
   - Added `apt_update_frequency` to apt
   - Added `cfg_files` and `cfg_missing` parameters to apt::force
@@ -99,7 +99,7 @@ This release has added tests to ensure graceful failure on OSX.
 
 This release adds support for Ubuntu 14.04.  It also includes many new features 
 and important bugfixes.  One huge change is that apt::key was replaced with
-apt_key, which allows you to use puppet resource apt_key to inventory keys on
+apt_key, which allows you to use puppet resource apt_key to inventory languageKeys on
 your system.
 
 Special thanks to daenney, our intrepid unofficial apt maintainer!
@@ -283,7 +283,7 @@ This release includes Ubuntu 12.10 (Quantal) support for PPAs.
 * 0ea4ffa (#13289) Change test scaffolding to use a module & manifest dir fixture path
 * a758247 (#13289) Clean up style violations and fix corresponding tests
 * 99c3fd3 (#13289) Add puppet lint tests to Rakefile
-* 5148cbf (#13125) Apt keys should be case insensitive
+* 5148cbf (#13125) Apt languageKeys should be case insensitive
 * b9607a4 Convert apt::key to use anchors
 
 

@@ -33,7 +33,7 @@ describe "the join_keys_to_values function" do
     expect(result).to eq([])
   end
 
-  it "should join hash's keys to its values" do
+  it "should join hash's languageKeys to its values" do
     result = scope.function_join_keys_to_values([{'a'=>1,2=>'foo',:b=>nil}, ":"])
     expect(result).to match_array(['a:1','2:foo','b:'])
   end

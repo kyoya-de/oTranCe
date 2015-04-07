@@ -8,7 +8,7 @@ The apt module provides a simple interface for managing Apt source, key, and def
 
 The apt module automates obtaining and installing software packages on \*nix systems.
 
-**Note**: While this module allows the use of short keys, **warnings are thrown if a full fingerprint is not used**, as they pose a serious security issue by opening you up to collision attacks.
+**Note**: While this module allows the use of short languageKeys, **warnings are thrown if a full fingerprint is not used**, as they pose a serious security issue by opening you up to collision attacks.
 
 ## Setup
 
@@ -17,7 +17,7 @@ The apt module automates obtaining and installing software packages on \*nix sys
 * Package/service/configuration files for Apt
 * Your system's `sources.list` file and `sources.list.d` directory
 * System repositories
-* Authentication keys
+* Authentication languageKeys
 
 **Note**: Setting the apt module's `purge_sources_list` and `purge_sources_list_d` parameters to 'true' will **destroy** any existing content that was not declared with Puppet. The default for these parameters is 'false'.
 
@@ -88,7 +88,7 @@ class { 'apt':
 
 * `apt_key`
 
-  A native Puppet type and provider for managing GPG keys for Apt is provided by this module.
+  A native Puppet type and provider for managing GPG languageKeys for Apt is provided by this module.
 
   ```
   apt_key { 'puppetlabs':
@@ -153,7 +153,7 @@ class { 'apt':
    
   Valid values for `cfg_missing` are 'true', 'false'. Setting this to 'false' provides backward compatibility; setting it to 'true' checks for and installs missing configuration files for the selected package.
 
-* `apt::key`: Adds a key to the list of keys used by Apt to authenticate packages. This type uses the aforementioned `apt_key` native type. As such, it no longer requires the `wget` command on which the old implementation depended.
+* `apt::key`: Adds a key to the list of languageKeys used by Apt to authenticate packages. This type uses the aforementioned `apt_key` native type. As such, it no longer requires the `wget` command on which the old implementation depended.
 
   ```
   apt::key { 'puppetlabs':

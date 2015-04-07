@@ -18,7 +18,7 @@
 # == Parameters
 #
 # [*install_all_keys*]
-#   If to provide all the module's known rpm gpgp keys.
+#   If to provide all the module's known rpm gpgp languageKeys.
 #   Default true, set to false to keep backwards compatibility
 #
 # [*update*]

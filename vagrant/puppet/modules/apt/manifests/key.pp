@@ -1,8 +1,8 @@
 # == Define: apt::key
 #
-# The apt::key defined type allows for keys to be added to apt's keyring
+# The apt::key defined type allows for languageKeys to be added to apt's keyring
 # which is used for package validation. This defined type uses the apt_key
-# native type to manage keys. This is a simple wrapper around apt_key with
+# native type to manage languageKeys. This is a simple wrapper around apt_key with
 # a few safeguards in place.
 #
 # === Parameters
