@@ -1,5 +1,6 @@
 {
   "name": "otrance/otrance",
+  "description":"The oTranCe project",
   "license": "MIT",
   "type": "project",
   "autoload": {
@@ -21,17 +22,20 @@
     "sensio/distribution-bundle": "~3.0,>=3.0.12",
     "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
     "incenteev/composer-parameter-handler": "~2.0",
-    "gedmo/doctrine-extensions": "2.4.0"
+    "gedmo/doctrine-extensions": "2.4.0",
+    "friendsofsymfony/rest-bundle": "1.5.3",
+    "friendsofsymfony/user-bundle": "~2.0@dev",
+    "jms/serializer-bundle": "0.13.0"
   },
   "require-dev": {
     "sensio/generator-bundle": "~2.3",
-    "composer/composer":"dev-master",
+    "composer/composer": "dev-master",
     "kyoya-de/otc-fixtures-bundle": "dev-master"
   },
   "repositories": [
     {
-      "type":"git",
-      "url":"https://github.com/kyoya-de/otc-fixtures-bundle.git"
+      "type": "git",
+      "url": "https://github.com/kyoya-de/otc-fixtures-bundle.git"
     }
   ],
   "scripts": {

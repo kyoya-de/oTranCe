@@ -25,10 +25,12 @@ class ScriptHandler
     public static function postInstallPackage(PackageEvent $event)
     {
         $operation = $event->getOperation();
-        if ($operation instanceof UninstallOperation) {
+        if ($operation instanceof UninstallOperation || $operation instanceof InstallOperation) {
             $package = $operation->getPackage();
         } else if ($operation instanceof UpdateOperation) {
             $package = $operation->getTargetPackage();
+        } else {
+            return;
         }
 
         if ('symfony-bundle' != $package->getType()) {
@@ -47,10 +49,12 @@ class ScriptHandler
     public static function preUninstallPackage(PackageEvent $event)
     {
         $operation = $event->getOperation();
-        if ($operation instanceof UninstallOperation) {
+        if ($operation instanceof UninstallOperation || $operation instanceof InstallOperation) {
             $package = $operation->getPackage();
         } else if ($operation instanceof UpdateOperation) {
             $package = $operation->getTargetPackage();
+        } else {
+            return;
         }
 
         if ('symfony-bundle' != $package->getType()) {

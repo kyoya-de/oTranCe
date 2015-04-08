@@ -1,4 +1,15 @@
+otc_web:
+    resource: "@OtcWebBundle/Resources/config/routing.yml"
+    prefix:   /
+
+otc_user:
+    resource: "@OtcUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 otc_core:
     resource: "@OtcCoreBundle/Resources/config/routing.yml"
     prefix:   /
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix: /

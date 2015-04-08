@@ -18,6 +18,11 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Otc\CoreBundle\OtcCoreBundle(),
             new Otc\Bundle\FixturesBundle\OtcFixturesBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Otc\UserBundle\OtcUserBundle(),
+            new Otc\WebBundle\OtcWebBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

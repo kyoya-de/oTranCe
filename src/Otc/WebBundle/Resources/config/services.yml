@@ -1,0 +1,4 @@
+services:
+#    otc_web.example:
+#        class: Otc\WebBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
