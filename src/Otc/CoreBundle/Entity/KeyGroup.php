@@ -27,8 +27,8 @@ class KeyGroup
     /**
      * @var Project
      *
-     * @ORM\Column(type="integer", options={"unsigned"})
-     * @ORM\ManyToOne(targetEntity="Otc\CoreBundle\Entity\Project", inversedBy="keyGroups")
+     * @ORM\ManyToOne(targetEntity="Otc\CoreBundle\Entity\Project", inversedBy="keyGroup")
+     * @ORM\JoinColumn(name="project", referencedColumnName="id", onDelete="CASCADE")
      */
     private $project;
 
@@ -47,15 +47,17 @@ class KeyGroup
     private $languageKeys;
 
     /**
-     *
+     * Constructor
      */
-    function __construct()
+    public function __construct()
     {
-        $this->languageKeys = new ArrayCollection();
+        $this->languageKeys = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * @return int
+     * Get id
+     *
+     * @return integer
      */
     public function getId()
     {
@@ -63,30 +65,21 @@ class KeyGroup
     }
 
     /**
-     * @param int $id
+     * Set name
+     *
+     * @param string $name
+     * @return KeyGroup
      */
-    public function setId($id)
+    public function setName($name)
     {
-        $this->id = $id;
+        $this->name = $name;
+
+        return $this;
     }
 
     /**
-     * @return Project
-     */
-    public function getProject()
-    {
-        return $this->project;
-    }
-
-    /**
-     * @param Project $project
-     */
-    public function setProject($project)
-    {
-        $this->project = $project;
-    }
-
-    /**
+     * Get name
+     *
      * @return string
      */
     public function getName()
@@ -95,35 +88,26 @@ class KeyGroup
     }
 
     /**
-     * @param string $name
+     * Set project
+     *
+     * @param \Otc\CoreBundle\Entity\Project $project
+     * @return KeyGroup
      */
-    public function setName($name)
+    public function setProject(\Otc\CoreBundle\Entity\Project $project = null)
     {
-        $this->name = $name;
+        $this->project = $project;
+
+        return $this;
     }
 
     /**
-     * @return LanguageKey[]
+     * Get project
+     *
+     * @return \Otc\CoreBundle\Entity\Project
      */
-    public function getLanguageKeys()
+    public function getProject()
     {
-        return $this->languageKeys;
-    }
-
-    /**
-     * @param LanguageKey[] $languageKeys
-     */
-    public function setLanguageKeys($languageKeys)
-    {
-        $this->languageKeys = $languageKeys;
-    }
-
-    /**
-     * @param LanguageKey $languageKey
-     */
-    public function addKey(LanguageKey $languageKey)
-    {
-        $this->languageKeys->add($languageKey);
+        return $this->project;
     }
 
     /**
@@ -147,5 +131,15 @@ class KeyGroup
     public function removeLanguageKey(\Otc\CoreBundle\Entity\LanguageKey $languageKeys)
     {
         $this->languageKeys->removeElement($languageKeys);
+    }
+
+    /**
+     * Get languageKeys
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLanguageKeys()
+    {
+        return $this->languageKeys;
     }
 }

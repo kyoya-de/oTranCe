@@ -54,7 +54,8 @@ class Project
     /**
      * @var Language
      *
-     * @ORM\OneToOne(targetEntity="Otc\CoreBundle\Entity\Language", mappedBy="id")
+     * @ORM\ManyToOne(targetEntity="Otc\CoreBundle\Entity\Language")
+     * @ORM\JoinColumn(referencedColumnName="id", onDelete="CASCADE")
      */
     private $defaultLanguage;
 
@@ -72,13 +73,18 @@ class Project
      */
     private $keyGroups;
 
-    function __construct()
+    /**
+     * Constructor
+     */
+    public function __construct()
     {
-        $this->keyGroups = new ArrayCollection();
+        $this->keyGroups = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * @return int
+     * Get id
+     *
+     * @return integer
      */
     public function getId()
     {
@@ -86,14 +92,21 @@ class Project
     }
 
     /**
-     * @param int $id
+     * Set name
+     *
+     * @param string $name
+     * @return Project
      */
-    public function setId($id)
+    public function setName($name)
     {
-        $this->id = $id;
+        $this->name = $name;
+
+        return $this;
     }
 
     /**
+     * Get name
+     *
      * @return string
      */
     public function getName()
@@ -102,14 +115,21 @@ class Project
     }
 
     /**
-     * @param string $name
+     * Set email
+     *
+     * @param string $email
+     * @return Project
      */
-    public function setName($name)
+    public function setEmail($email)
     {
-        $this->name = $name;
+        $this->email = $email;
+
+        return $this;
     }
 
     /**
+     * Get email
+     *
      * @return string
      */
     public function getEmail()
@@ -118,14 +138,21 @@ class Project
     }
 
     /**
-     * @param string $email
+     * Set url
+     *
+     * @param string $url
+     * @return Project
      */
-    public function setEmail($email)
+    public function setUrl($url)
     {
-        $this->email = $email;
+        $this->url = $url;
+
+        return $this;
     }
 
     /**
+     * Get url
+     *
      * @return string
      */
     public function getUrl()
@@ -134,14 +161,21 @@ class Project
     }
 
     /**
-     * @param string $url
+     * Set logo
+     *
+     * @param string $logo
+     * @return Project
      */
-    public function setUrl($url)
+    public function setLogo($logo)
     {
-        $this->url = $url;
+        $this->logo = $logo;
+
+        return $this;
     }
 
     /**
+     * Get logo
+     *
      * @return string
      */
     public function getLogo()
@@ -150,67 +184,16 @@ class Project
     }
 
     /**
-     * @param string $logo
-     */
-    public function setLogo($logo)
-    {
-        $this->logo = $logo;
-    }
-
-    /**
-     * @return Language
-     */
-    public function getDefaultLanguage()
-    {
-        return $this->defaultLanguage;
-    }
-
-    /**
-     * @param Language $defaultLanguage
-     */
-    public function setDefaultLanguage(Language $defaultLanguage)
-    {
-        $this->defaultLanguage = $defaultLanguage;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isFillUntranslated()
-    {
-        return $this->fillUntranslated;
-    }
-
-    /**
+     * Set fillUntranslated
+     *
      * @param boolean $fillUntranslated
+     * @return Project
      */
     public function setFillUntranslated($fillUntranslated)
     {
         $this->fillUntranslated = $fillUntranslated;
-    }
 
-    /**
-     * @return ArrayCollection|KeyGroup[]
-     */
-    public function getKeyGroups()
-    {
-        return $this->keyGroups;
-    }
-
-    /**
-     * @param ArrayCollection|KeyGroup[] $keyGroups
-     */
-    public function setKeyGroups($keyGroups)
-    {
-        $this->keyGroups = $keyGroups;
-    }
-
-    /**
-     * @param KeyGroup $keyGroup
-     */
-    public function addKeyGroup(KeyGroup $keyGroup)
-    {
-        $this->keyGroups->add($keyGroup);
+        return $this;
     }
 
     /**
@@ -224,6 +207,42 @@ class Project
     }
 
     /**
+     * Set defaultLanguage
+     *
+     * @param \Otc\CoreBundle\Entity\Language $defaultLanguage
+     * @return Project
+     */
+    public function setDefaultLanguage(\Otc\CoreBundle\Entity\Language $defaultLanguage = null)
+    {
+        $this->defaultLanguage = $defaultLanguage;
+
+        return $this;
+    }
+
+    /**
+     * Get defaultLanguage
+     *
+     * @return \Otc\CoreBundle\Entity\Language
+     */
+    public function getDefaultLanguage()
+    {
+        return $this->defaultLanguage;
+    }
+
+    /**
+     * Add keyGroups
+     *
+     * @param \Otc\CoreBundle\Entity\KeyGroup $keyGroups
+     * @return Project
+     */
+    public function addKeyGroup(\Otc\CoreBundle\Entity\KeyGroup $keyGroups)
+    {
+        $this->keyGroups[] = $keyGroups;
+
+        return $this;
+    }
+
+    /**
      * Remove keyGroups
      *
      * @param \Otc\CoreBundle\Entity\KeyGroup $keyGroups
@@ -231,5 +250,15 @@ class Project
     public function removeKeyGroup(\Otc\CoreBundle\Entity\KeyGroup $keyGroups)
     {
         $this->keyGroups->removeElement($keyGroups);
+    }
+
+    /**
+     * Get keyGroups
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getKeyGroups()
+    {
+        return $this->keyGroups;
     }
 }

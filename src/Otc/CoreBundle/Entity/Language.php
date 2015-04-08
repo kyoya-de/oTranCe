@@ -61,7 +61,17 @@ class Language
     private $translations;
 
     /**
-     * @return int
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
      */
     public function getId()
     {
@@ -69,31 +79,45 @@ class Language
     }
 
     /**
-     * @param int $id
+     * Set active
+     *
+     * @param boolean $active
+     * @return Language
      */
-    public function setId($id)
+    public function setActive($active)
     {
-        $this->id = $id;
+        $this->active = $active;
+
+        return $this;
     }
 
     /**
-     * @return boolean
+     * Get active
+     *
+     * @return boolean 
      */
-    public function isActive()
+    public function getActive()
     {
         return $this->active;
     }
 
     /**
-     * @param boolean $active
+     * Set locale
+     *
+     * @param string $locale
+     * @return Language
      */
-    public function setActive($active)
+    public function setLocale($locale)
     {
-        $this->active = $active;
+        $this->locale = $locale;
+
+        return $this;
     }
 
     /**
-     * @return string
+     * Get locale
+     *
+     * @return string 
      */
     public function getLocale()
     {
@@ -101,15 +125,22 @@ class Language
     }
 
     /**
-     * @param string $locale
+     * Set name
+     *
+     * @param string $name
+     * @return Language
      */
-    public function setLocale($locale)
+    public function setName($name)
     {
-        $this->locale = $locale;
+        $this->name = $name;
+
+        return $this;
     }
 
     /**
-     * @return string
+     * Get name
+     *
+     * @return string 
      */
     public function getName()
     {
@@ -117,44 +148,26 @@ class Language
     }
 
     /**
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFlag()
-    {
-        return $this->flag;
-    }
-
-    /**
+     * Set flag
+     *
      * @param string $flag
+     * @return Language
      */
     public function setFlag($flag)
     {
         $this->flag = $flag;
+
+        return $this;
     }
 
     /**
-     * Get active
+     * Get flag
      *
-     * @return boolean
+     * @return string 
      */
-    public function getActive()
+    public function getFlag()
     {
-        return $this->active;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
+        return $this->flag;
     }
 
     /**
@@ -183,7 +196,7 @@ class Language
     /**
      * Get translations
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getTranslations()
     {

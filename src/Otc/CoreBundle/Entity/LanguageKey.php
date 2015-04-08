@@ -34,8 +34,8 @@ class LanguageKey {
     /**
      * @var KeyGroup
      *
-     * @ORM\Column(type="integer", options={"unsigned"})
      * @ORM\ManyToOne(targetEntity="Otc\CoreBundle\Entity\KeyGroup", inversedBy="languageKeys")
+     * @ORM\JoinColumn(name="keyGroup", referencedColumnName="id", onDelete="CASCADE")
      */
     private $keyGroup;
 
@@ -47,7 +47,17 @@ class LanguageKey {
     private $translations;
 
     /**
-     * @return int
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
      */
     public function getId()
     {
@@ -55,14 +65,21 @@ class LanguageKey {
     }
 
     /**
-     * @param int $id
+     * Set name
+     *
+     * @param string $name
+     * @return LanguageKey
      */
-    public function setId($id)
+    public function setName($name)
     {
-        $this->id = $id;
+        $this->name = $name;
+
+        return $this;
     }
 
     /**
+     * Get name
+     *
      * @return string
      */
     public function getName()
@@ -71,34 +88,26 @@ class LanguageKey {
     }
 
     /**
-     * @param string $name
+     * Set keyGroup
+     *
+     * @param \Otc\CoreBundle\Entity\KeyGroup $keyGroup
+     * @return LanguageKey
      */
-    public function setName($name)
+    public function setKeyGroup(\Otc\CoreBundle\Entity\KeyGroup $keyGroup = null)
     {
-        $this->name = $name;
+        $this->keyGroup = $keyGroup;
+
+        return $this;
     }
 
     /**
-     * @return KeyGroup
+     * Get keyGroup
+     *
+     * @return \Otc\CoreBundle\Entity\KeyGroup
      */
     public function getKeyGroup()
     {
         return $this->keyGroup;
-    }
-
-    /**
-     * @param KeyGroup $keyGroup
-     */
-    public function setKeyGroup(KeyGroup $keyGroup)
-    {
-        $this->keyGroup = $keyGroup;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -127,7 +136,7 @@ class LanguageKey {
     /**
      * Get translations
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTranslations()
     {

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "11f1a46b7ef1b69e7e9d0589d2a94c96",
+    "hash": "e06fcc7ddab32fd0e640e7ea22c03dc0",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1736,12 +1736,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "f10c71475167a4661225b14560ca0a400d730829"
+                "reference": "4d134ce8a2aacb9566fee8deb8c514248fd2a983"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/f10c71475167a4661225b14560ca0a400d730829",
-                "reference": "f10c71475167a4661225b14560ca0a400d730829",
+                "url": "https://api.github.com/repos/composer/composer/zipball/4d134ce8a2aacb9566fee8deb8c514248fd2a983",
+                "reference": "4d134ce8a2aacb9566fee8deb8c514248fd2a983",
                 "shasum": ""
             },
             "require": {
@@ -1796,7 +1796,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2015-03-29 14:37:42"
+            "time": "2015-04-08 13:43:49"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -1871,7 +1871,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kyoya-de/otc-fixtures-bundle.git",
-                "reference": "3e7d84ef774489bcb3aca0a3c574428b0d5216ab"
+                "reference": "f1f7992e697adb29809ff1d59102f633baef17be"
             },
             "require": {
                 "symfony/console": "~2.6",
@@ -1897,7 +1897,7 @@
                 }
             ],
             "description": "Adds fixtures for oTranCe development.",
-            "time": "2015-04-06 23:58:08"
+            "time": "2015-04-08 18:59:34"
         },
         {
             "name": "seld/jsonlint",
