@@ -8,20 +8,77 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body>
-<header{% if pageClass is defined %} class="{{ pageClass }}"{% endif %}>
+<header>
+    <nav id="access" role="navigation">
+        <h3 class="assistive-text">{{ 'layout.mainmenu'|trans({}, 'Pages') }}</h3>
+
+        <div class="skip-link">
+            <a class="assistive-text" href="#content" title="{{ 'layout.switch_to_content'|trans({}, 'Pages') }}">{{ 'layout.switch_to_content'|trans({}, 'Pages') }}</a>
+        </div>
+        <div class="menu-default_menu-container">
+            <ul id="menu-default_menu" class="menu">
+                <li id="menu-item-1">
+                    <a href="{{ path('otc_web_homepage') }}">{{ 'layout.pages.start'|trans({}, 'Pages') }}</a>
+                </li>
+                <li id="menu-item-2">
+                    <a href="#">{{ 'layout.pages.configuration'|trans({}, 'Pages') }}</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-2-1">
+                            <a href="#">{{ 'layout.pages.configuration.common'|trans({}, 'Pages') }}</a></li>
+                        <li id="menu-item-2-2">
+                            <a href="#">{{ 'layout.pages.configuration.languages'|trans({}, 'Pages') }}</a></li>
+                        <li id="menu-item-2-3">
+                            <a href="{{ path('fos_user_profile_show') }}">{{ 'layout.pages.configuration.profile'|trans({}, 'Pages') }}</a></li>
+                    </ul>
+                </li>
+                <li id="menu-item-3">
+                    <a href="#">{{ 'layout.pages.translations'|trans({}, 'Pages') }}</a>
+                </li>
+                <li id="menu-item-4">
+                    <a href="#">{{ 'layout.pages.downloads'|trans({}, 'Pages') }}</a></li>
+                <li id="menu-item-5">
+                    <a href="#">{{ 'layout.pages.browser'|trans({}, 'Pages') }}</a></li>
+                <li id="menu-item-6">
+                    <a href="#">{{ 'layout.pages.import'|trans({}, 'Pages') }}</a></li>
+                <li id="menu-item-7">
+                    <a href="#">{{ 'layout.pages.export'|trans({}, 'Pages') }}</a></li>
+                <li id="menu-item-9">
+                    <a href="#">{{ 'layout.pages.log'|trans({}, 'Pages') }}</a></li>
+                <li id="menu-item-10">
+                    <a href="#">{{ 'layout.pages.statistics'|trans({}, 'Pages') }}</a></li>
+                <li id="menu-item-11">
+                    <a href="#">{{ 'layout.pages.admin'|trans({}, 'Pages') }}</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-11-1">
+                            <a href="#">{{ 'layout.pages.admin.projects'|trans({}, 'Pages') }}</a></li>
+                        <li id="menu-item-11-2">
+                            <a href="#">{{ 'layout.pages.admin.users'|trans({}, 'Pages') }}</a></li>
+                        <li id="menu-item-11-3">
+                            <a href="#">{{ 'layout.pages.admin.languages'|trans({}, 'Pages') }}</a></li>
+                        <li id="menu-item-11-5">
+                            <a href="#">{{ 'layout.pages.admin.importer'|trans({}, 'Pages') }}</a></li>
+                        <li id="menu-item-11-4">
+                            <a href="#">{{ 'layout.pages.admin.exporter'|trans({}, 'Pages') }}</a></li>
+                        <li id="menu-item-11-6">
+                            <a href="#">{{ 'layout.pages.admin.vcs'|trans({}, 'Pages') }}</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="user-status">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <img src="{{ asset('bundles/otcweb/img/icons/16x16/LockUser.png') }}"> <span class="username">{{ app.user.username }}</span> |
+                    <a href="{{ path('fos_user_security_logout') }}">{{ 'layout.security.logout'|trans({}, 'FOSUserBundle') }}</a>
+                {% else %}
+                    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.security.login'|trans({}, 'FOSUserBundle') }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
     {% block header %}
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-            <a href="{{ path('fos_user_security_logout') }}">
-                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-            </a>
-        {% else %}
-            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-        {% endif %}
     {% endblock %}
 </header>
 
-<section{% if pageClass is defined %} class="{{ pageClass }}"{% endif %}>
+<section id="content"{% if pageClass is defined %} class="{{ pageClass }}"{% endif %}>
     {% block body %}{% endblock %}
 </section>
 
@@ -32,9 +89,15 @@
         <div class="version">{{ 'footer.version'|trans({}, 'Footer') }} {{ version }}</div>
         <ul class="clearfix">
             <li>{{ 'footer.oss-hint'|trans({}, 'Footer') }}</li>
-            <li><a href="http://otrance.de/{% if app.request.locale == 'de' %}de{% else %}en{% endif %}/">{{ 'footer.homepage'|trans({}, 'Footer') }}</a></li>
-            <li><a href="http://otrance.de/{% if app.request.locale == 'de' %}de{% else %}en{% endif %}/team/">{{ 'footer.team'|trans({}, 'Footer') }}</a></li>
-            <li><a href="http://otrance.de/{% if app.request.locale == 'de' %}de{% else %}en{% endif %}/project/donate/">{{ 'footer.donate'|trans({}, 'Footer') }}</a></li>
+            <li>
+                <a href="http://otrance.de/{% if app.request.locale == 'de' %}de{% else %}en{% endif %}/" target="_blank">{{ 'footer.homepage'|trans({}, 'Footer') }}</a>
+            </li>
+            <li>
+                <a href="http://otrance.de/{% if app.request.locale == 'de' %}de{% else %}en{% endif %}/team/" target="_blank">{{ 'footer.team'|trans({}, 'Footer') }}</a>
+            </li>
+            <li>
+                <a href="http://otrance.de/{% if app.request.locale == 'de' %}de{% else %}en{% endif %}/project/donate/" target="_blank">{{ 'footer.donate'|trans({}, 'Footer') }}</a>
+            </li>
         </ul>
     </div>
 </footer>

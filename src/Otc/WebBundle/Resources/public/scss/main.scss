@@ -12,7 +12,6 @@ body {
   color: #253D04;
   text-align: left;
   border-top: 5px solid #6E9E2D;
-  background: transparent url(../img/bg-body.gif) repeat-x 0 0;
 }
 
 .clearfix {
@@ -32,11 +31,34 @@ body {
     color: #425D1C;
   }
 
+  h2 {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    font-weight: normal;
+    color: #425D1C;
+  }
+
+  h3 {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 2em;
+    font-weight: normal;
+    color: #425D1C;
+  }
+
+  h4 {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 1.8em;
+    font-weight: normal;
+    color: #425D1C;
+  }
+
   .login-box {
     width: 600px;
     margin: auto auto;
     vertical-align: middle;
-    background: url(../img/User.png) no-repeat 5% 36%;
     a {
       color: #E87B00;
       &:hover {
@@ -44,14 +66,15 @@ body {
       }
     }
     fieldset {
+      @include background-image(linear-gradient(#F8F8F8, #FFFFFF));
       border: 1px solid #DDDDDD;
       color: #425D1C;
       margin: 0 0 12px;
       padding: 5px;
       @include border-radius(4px);
       .input-box {
-        margin-left: 66px;
-        padding: 12px;
+        background: url(../img/User.png) no-repeat 5% 36%;
+        padding: 12px 12px 12px 78px;
         .input {
           margin-bottom: 5px;
           padding: 4px;
@@ -226,6 +249,112 @@ a {
   &:hover {
     color: #e87b00;
     text-decoration: none;
+  }
+}
+
+/* Assistive text */
+.assistive-text {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+#access {
+  background: #6F9E2E; /* Show a solid color for older browsers */
+  @include background-image(linear-gradient(#C9E1A8, #6F9E2E));
+  @include box-shadow(rgba(0, 0, 0, 0.4) 0 1px 2px);
+  clear: both;
+  display: block;
+  float: left;
+  margin: 0 auto 6px;
+  width: 100%;
+  color:#fff;
+  div {
+    margin: 0 7.6%;
+  }
+  a.assistive-text:active,a.assistive-text:focus{
+    background: #595959;
+    border-bottom: 1px solid #C9E1A8;
+    color: #6F9E2E;
+    clip: auto !important;
+    font-size: 12px;
+    position: absolute;
+    text-decoration: underline;
+    top: 0;
+    left: 7.6%;
+  }
+  ul {
+    font-size: 13px;
+    list-style: none;
+    margin: 0 0 0 -0.8125em;
+    padding-left: 0;
+    ul {
+      @include box-shadow(rgba(0, 0, 0, 0.4) 0 2px 2px);
+      display: none;
+      float: left;
+      margin: 0;
+      position: absolute;
+      top: 3.333em;
+      left: 0;
+      width: 225px;
+      z-index: 99999;
+      a {
+        background: #f9f9f9;
+        border-bottom: 1px dotted #C9E1A8;
+        color: #444;
+        font-size: 13px;
+        font-weight: normal;
+        height: auto;
+        line-height: 1.4em;
+        padding: 10px 10px;
+        width: 205px;
+      }
+      ul {
+        left: 100%;
+        top: 0;
+      }
+    }
+  }
+  li {
+    float: left;
+    position: relative;
+    a {
+      color: #eee;
+      display: block;
+      line-height: 3.333em;
+      padding: 0 1.2125em;
+      text-decoration: none;
+    }
+  }
+  li:hover > a,
+  ul ul :hover > a,
+  a:focus {
+    background: #efefef;
+  }
+  li:hover > a,
+  a:focus {
+    @include background-image(linear-gradient(#f9f9f9, #e5e5e5));
+    color: #373737;
+  }
+  ul li:hover > ul {
+    display: block;
+  }
+  .current_page_item > a,
+  .current_page_ancestor > a {
+    font-weight: bold;
+  }
+  .user-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    text-align: right;
+    white-space: nowrap;
+    div {
+      margin: 0;
+    }
+    .username {
+      font-weight: bold;
+    }
   }
 }
 

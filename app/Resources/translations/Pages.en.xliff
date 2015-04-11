@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>layout.pages.start</source>
+                <target>Start</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>layout.pages.configuration</source>
+                <target>Configuration</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>layout.pages.configuration.common</source>
+                <target>General</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>layout.pages.configuration.languages</source>
+                <target>Languages</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>layout.pages.configuration.profile</source>
+                <target>User profile</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>layout.pages.translations</source>
+                <target>Translations</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>layout.pages.downloads</source>
+                <target>Downloads</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>layout.pages.browser</source>
+                <target>File browser</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>layout.pages.import</source>
+                <target>Import</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>layout.pages.export</source>
+                <target>Export</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>layout.pages.log</source>
+                <target>Log</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>layout.pages.statistics</source>
+                <target>Statistics</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>layout.pages.admin</source>
+                <target>Admin</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>layout.pages.admin.projects</source>
+                <target>Projects</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>layout.pages.admin.users</source>
+                <target>Users</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>layout.pages.admin.languages</source>
+                <target>Languages</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>layout.pages.admin.importer</source>
+                <target>Importer</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>layout.pages.admin.exporter</source>
+                <target>Exporter</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>layout.pages.admin.vcs</source>
+                <target>Version control system</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>layout.mainmenu</source>
+                <target>Main menu</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>layout.switch_to_content</source>
+                <target>Switch to content</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -28,7 +28,11 @@
             </trans-unit>
             <trans-unit id="7">
                 <source>security.login.register-hint</source>
-                <target><![CDATA[You don't have an account yet? You can <a href="%registerLink%">register</a> an account.]]></target>
+                <target><![CDATA[You don't have an account yet? Feel free to <a href="%link%">register</a> one.]]></target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>security.login.forgot-pw-hint</source>
+                <target><![CDATA[Or did you lost your password? You can request a <a href="%link%">new one</a>.]]></target>
             </trans-unit>
             <trans-unit id="8">
                 <source>registration.heading</source>
@@ -61,6 +65,35 @@
             <trans-unit id="15">
                 <source>form.realName</source>
                 <target>Your real name:</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>layout.security.logout</source>
+                <target>Logout</target>
+            </trans-unit>
+
+            <trans-unit id="17">
+                <source>layout.security.login</source>
+                <target>Login</target>
+            </trans-unit>
+
+            <trans-unit id="18">
+                <source>layout.register</source>
+                <target>Register</target>
+            </trans-unit>
+
+            <trans-unit id="19">
+                <source>layout.security.logged_in_as</source>
+                <target>Logged in as %username%</target>
+            </trans-unit>
+
+            <trans-unit id="20">
+                <source>resetting.heading</source>
+                <target>Forgot password</target>
+            </trans-unit>
+
+            <trans-unit id="21">
+                <source>resetting.title</source>
+                <target>Reset password</target>
             </trans-unit>
         </body>
     </file>

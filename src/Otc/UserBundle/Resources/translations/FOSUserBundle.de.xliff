@@ -28,7 +28,11 @@
             </trans-unit>
             <trans-unit id="7">
                 <source>security.login.register-hint</source>
-                <target><![CDATA[Sie haben noch kein Benutzerkonto? <a href="%registerLink%">Registrieren</a> Sie sich hier.]]></target>
+                <target><![CDATA[Sie haben noch kein Benutzerkonto? Es steht Ihnen frei, sich zu <a href="%link%">registrieren</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>security.login.forgot-pw-hint</source>
+                <target><![CDATA[Oder haben Sie ihr Kennwort vergessen? Lassen Sie sich ein <a href="%link%">neues Kennwort</a> zuschicken.]]></target>
             </trans-unit>
             <trans-unit id="8">
                 <source>registration.heading</source>
@@ -61,6 +65,36 @@
             <trans-unit id="15">
                 <source>form.realName</source>
                 <target>Ihr richtiger Name:</target>
+            </trans-unit>
+
+            <trans-unit id="16">
+                <source>layout.security.logout</source>
+                <target>Abmelden</target>
+            </trans-unit>
+
+            <trans-unit id="17">
+                <source>layout.security.login</source>
+                <target>Anmelden</target>
+            </trans-unit>
+
+            <trans-unit id="18">
+                <source>layout.register</source>
+                <target>Registrieren</target>
+            </trans-unit>
+
+            <trans-unit id="19">
+                <source>layout.security.logged_in_as</source>
+                <target>Angemeldet als %username%</target>
+            </trans-unit>
+
+            <trans-unit id="20">
+                <source>resetting.heading</source>
+                <target>Kennwort vergessen</target>
+            </trans-unit>
+
+            <trans-unit id="21">
+                <source>resetting.title</source>
+                <target>Kennwort zurücksetzen</target>
             </trans-unit>
         </body>
     </file>

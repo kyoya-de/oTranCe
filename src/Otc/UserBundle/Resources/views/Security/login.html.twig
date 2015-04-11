@@ -4,11 +4,8 @@
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block header %}
-    <h1>{{ 'security.login.heading'|trans({}, 'FOSUserBundle') }}</h1>
-{% endblock %}
-
 {% block fos_user_content %}
+    <h1>{{ 'security.login.heading'|trans({}, 'FOSUserBundle') }}</h1>
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -43,7 +40,8 @@
                     </div>
                 </div>
             </fieldset>
-            {{ 'security.login.register-hint'|trans({'%registerLink%': path('fos_user_registration_register')})|raw }}
+            <p>{{ 'security.login.register-hint'|trans({'%link%': path('fos_user_registration_register')})|raw }}</p>
+            <p>{{ 'security.login.forgot-pw-hint'|trans({'%link%': path('fos_user_resetting_request')})|raw }}</p>
         </form>
     </div>
 {% endblock fos_user_content %}
