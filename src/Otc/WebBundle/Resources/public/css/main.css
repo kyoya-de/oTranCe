@@ -1,0 +1,67 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+body { min-width: 782px; min-height: 100%; font-size: 62.5%; font-family: Verdana, Helvetica, sans-serif, serif; font-weight: normal; color: #253D04; text-align: left; border-top: 5px solid #6E9E2D; background: transparent url(../img/bg-body.gif) repeat-x 0 0; }
+
+.clearfix { *zoom: 1; }
+.clearfix:after { content: ""; display: table; clear: both; }
+
+.login { width: auto; margin: 0 auto; text-align: center; }
+.login h1 { margin-top: 60px; margin-bottom: 40px; font-size: 2.4em; font-weight: normal; color: #425D1C; }
+.login .login-box { width: 600px; margin: auto auto; vertical-align: middle; background: url(../img/User.png) no-repeat 5% 36%; }
+.login .login-box a { color: #E87B00; }
+.login .login-box a:hover { color: #6E9E2D; }
+.login .login-box fieldset { border: 1px solid #DDDDDD; color: #425D1C; margin: 0 0 12px; padding: 5px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+.login .login-box fieldset .input-box { margin-left: 66px; padding: 12px; }
+.login .login-box fieldset .input-box .input { margin-bottom: 5px; padding: 4px; }
+.login .login-box fieldset .input-box .input.error { color: #f00; }
+.login .login-box fieldset .input-box .input.error input { border: 1px solid #F00; }
+.login .login-box fieldset .input-box .input a.button { margin-left: 10px; }
+.login .login-box fieldset .input-box .input > * { float: left; text-align: left; margin: 0; }
+.login .login-box fieldset .input-box .input label { display: block; width: 120px; height: 10px; margin: 5px 15px 5px 0; }
+.login .login-box fieldset .input-box .input input[type="text"], .login .login-box fieldset .input-box .input input[type="password"], .login .login-box fieldset .input-box .input input[type="email"] { width: 250px; }
+.login .login-box fieldset .input-box .input input[type="checkbox"] { margin: 4px 0 3px; }
+
+input[type="text"], input[type="password"], input[type="email"], input.small { padding: 1px 2px; border: 1px solid #DDD; background: #fff; }
+input[type="text"]:disabled, input[type="password"]:disabled, input[type="email"]:disabled, input.small:disabled { border-color: #cccccc; background-color: #DDDDDD; }
+input[type="text"]:hover, input[type="text"]:focus, input[type="password"]:hover, input[type="password"]:focus, input[type="email"]:hover, input[type="email"]:focus, input.small:hover, input.small:focus { border-color: #aaaaaa; }
+input[type="button"], input[type="submit"], input[type="reset"] { width: auto; font: 13px verdana, arial, sans-serif; color: #e87b00; border: 1px solid #ddd; background: url(../img/bg-buttons.gif) repeat-x; white-space: nowrap; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; vertical-align: top; overflow: visible; cursor: pointer; padding: 0 6px; height: 24px; }
+input[type="button"] img, input[type="submit"] img, input[type="reset"] img { margin: 0 2px; }
+input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover { color: #6E9E2D; cursor: pointer; }
+input[type="button"]:disabled, input[type="submit"]:disabled, input[type="reset"]:disabled { color: #888; cursor: default; }
+
+button[type="button"], button[type="submit"], button[type="reset"] { width: auto; font: 13px verdana, arial, sans-serif; color: #e87b00; border: 1px solid #ddd; background: url(../img/bg-buttons.gif) repeat-x; white-space: nowrap; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; vertical-align: top; overflow: visible; cursor: pointer; padding: 0 6px; height: 24px; }
+button[type="button"] img, button[type="submit"] img, button[type="reset"] img { margin: 0 2px; }
+button[type="button"]:hover, button[type="submit"]:hover, button[type="reset"]:hover { color: #6E9E2D; cursor: pointer; }
+button[type="button"]:disabled, button[type="submit"]:disabled, button[type="reset"]:disabled { color: #888; cursor: default; }
+
+a.button { width: auto; font: 13px verdana, arial, sans-serif; color: #e87b00; border: 1px solid #ddd; background: url(../img/bg-buttons.gif) repeat-x; white-space: nowrap; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; text-decoration: none; display: inline-block; margin: 0 6px 20px 0; padding: 3px 6px; height: 16px; }
+a.button img { margin: 0 2px; }
+a.button:hover { color: #6E9E2D; cursor: pointer; }
+a.button:disabled { color: #888; cursor: default; }
+
+footer .footer { position: fixed; width: 100%; bottom: 0; text-align: right; border-top: 1px solid #6E9E2D; background: #DADADA; vertical-align: middle; opacity: 0.87; z-index: 900; font-size: 10px; padding: 4px 0 5px; }
+footer .footer .version { float: left; margin-left: 8px; }
+footer .footer ul { display: inline-block; margin: 0 8px 0 0; padding: 0; float: right; }
+footer .footer ul li { float: left; margin-right: 3px; }
+footer .footer ul li:after { content: "\b7"; margin-left: 3px; }
+footer .footer ul li:last-child:after { content: ""; margin: 0; }
+
+a { color: #253D04; text-decoration: none; }
+a:hover { color: #e87b00; text-decoration: none; }
+
+/*# sourceMappingURL=main.css.map */

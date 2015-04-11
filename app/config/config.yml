@@ -29,12 +29,16 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        version: %app.version%
 
 # Assetic Configuration
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:
+        - FOSUserBundle
+        - OtcWebBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

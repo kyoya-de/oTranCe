@@ -1,0 +1,39 @@
+@import "compass/reset";
+@import "compass/utilities";
+
+.text {
+  width: 250px;
+}
+
+.register .text {
+  width: 240px;
+}
+
+#send {
+  margin:6px 0 0 2px;
+}
+
+
+#login {
+  width: auto;
+  margin: 0 auto;
+  padding: 0 18px;
+  text-align: center;
+
+  table.bdr {
+    td {
+      border: 1px solid #ddd;
+      vertical-align: middle;
+    }
+
+    margin: 0 auto;
+  }
+
+  a {
+    color:#E87B00;
+    &:hover {
+      color:#6E9E2D;
+    }
+  }
+}
+

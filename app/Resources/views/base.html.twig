@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/otcweb/css/main.css') }}"
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<header{% if pageClass is defined %} class="{{ pageClass }}"{% endif %}>
+    {% block header %}
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        {% endif %}
+    {% endblock %}
+</header>
+
+<section{% if pageClass is defined %} class="{{ pageClass }}"{% endif %}>
+    {% block body %}{% endblock %}
+</section>
+
+<footer{% if pageClass is defined %} class="{{ pageClass }}"{% endif %}>
+    {% block footer %}
+    {% endblock %}
+    <div class="footer clearfix">
+        <div class="version">{{ 'footer.version'|trans({}, 'Footer') }} {{ version }}</div>
+        <ul class="clearfix">
+            <li>{{ 'footer.oss-hint'|trans({}, 'Footer') }}</li>
+            <li><a href="http://otrance.de/{% if app.request.locale == 'de' %}de{% else %}en{% endif %}/">{{ 'footer.homepage'|trans({}, 'Footer') }}</a></li>
+            <li><a href="http://otrance.de/{% if app.request.locale == 'de' %}de{% else %}en{% endif %}/team/">{{ 'footer.team'|trans({}, 'Footer') }}</a></li>
+            <li><a href="http://otrance.de/{% if app.request.locale == 'de' %}de{% else %}en{% endif %}/project/donate/">{{ 'footer.donate'|trans({}, 'Footer') }}</a></li>
+        </ul>
+    </div>
+</footer>
+{% block javascripts %}{% endblock %}
+</body>
 </html>

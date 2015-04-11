@@ -1,0 +1,77 @@
+{% set pageClass = 'login' %}
+
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block header %}
+    <h1>{{ 'registration.heading'|trans({}, 'FOSUserBundle') }}</h1>
+{% endblock %}
+
+{% block fos_user_content %}
+    <div class="login-box">
+        <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+            <fieldset>
+                <legend>{{ 'registration.title'|trans }}</legend>
+                <div class="input-box">
+                    {% set formErrors = form_errors(form.username) %}
+                    <div class="input clearfix{% if formErrors is not empty %} error{% endif %}">
+                        {{ form_label(form.username) }}
+                        {{ form_widget(form.username) }}
+                        {% if formErrors is not empty %}
+                            <div>{{ formErrors|raw }}</div>
+                        {% endif %}
+                    </div>
+
+                    {% set formErrors = form_errors(form.plainPassword.first) %}
+                    <div class="input clearfix{% if formErrors is not empty %} error{% endif %}">
+                        {{ form_label(form.plainPassword.first) }}
+                        {{ form_widget(form.plainPassword.first) }}
+                        {% if formErrors is not empty %}
+                            <div>{{ formErrors|raw }}</div>
+                        {% endif %}
+                    </div>
+
+                    {% set formErrors = form_errors(form.plainPassword.second) %}
+                    <div class="input clearfix{% if formErrors is not empty %} error{% endif %}">
+                        {{ form_label(form.plainPassword.second) }}
+                        {{ form_widget(form.plainPassword.second) }}
+                        {% if formErrors is not empty %}
+                            <div>{{ formErrors|raw }}</div>
+                        {% endif %}
+                    </div>
+
+                    {% set formErrors = form_errors(form.realName) %}
+                    <div class="input clearfix{% if formErrors is not empty %} error{% endif %}">
+                        {{ form_label(form.realName) }}
+                        {{ form_widget(form.realName) }}
+                        {% if formErrors is not empty %}
+                            <div>{{ formErrors|raw }}</div>
+                        {% endif %}
+                    </div>
+
+                    {% set formErrors = form_errors(form.email) %}
+                    <div class="input clearfix{% if formErrors is not empty %} error{% endif %}">
+                        {{ form_label(form.email) }}
+                        {{ form_widget(form.email) }}
+                        {% if formErrors is not empty %}
+                            <div>{{ formErrors|raw }}</div>
+                        {% endif %}
+                    </div>
+
+                    {{ form_widget(form) }}
+
+                    <div class="input clearfix">
+                        <label></label>
+                        <button type="submit">
+                            <img src="{{ asset('bundles/otcweb/img/icons/save.png') }}">{{ 'registration.submit'|trans }}
+                        </button>
+                        <a class="button" href="{{ path('otc_web_homepage') }}">
+                            <img src="{{ asset('bundles/otcweb/img/icons/delete.gif') }}"> {{ 'registration.cancel'|trans }}
+                        </a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock fos_user_content %}

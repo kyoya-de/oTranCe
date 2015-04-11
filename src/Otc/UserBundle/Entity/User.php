@@ -26,12 +26,35 @@ class User extends BaseUser
     protected $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $realName;
+
+    /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRealName()
+    {
+        return $this->realName;
+    }
+
+    /**
+     * @param string $realName
+     */
+    public function setRealName($realName)
+    {
+        $this->realName = $realName;
     }
 }

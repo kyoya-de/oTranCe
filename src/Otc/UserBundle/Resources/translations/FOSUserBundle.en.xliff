@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>security.login.heading</source>
+                <target>Translation-Center: Login</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>security.login.title</source>
+                <target>Login information</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>security.login.username</source>
+                <target>Username:</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>security.login.password</source>
+                <target>Password:</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>security.login.remember_me</source>
+                <target>Automatic login:</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>security.login.submit</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>security.login.register-hint</source>
+                <target><![CDATA[You don't have an account yet? You can <a href="%registerLink%">register</a> an account.]]></target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>registration.heading</source>
+                <target>Register a new account</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>registration.title</source>
+                <target>Registration information</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>registration.cancel</source>
+                <target>Cancel</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>form.email</source>
+                <target>E-Mail address:</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>form.username</source>
+                <target>Username:</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>form.password</source>
+                <target>Password:</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>form.password_confirmation</source>
+                <target>Confirm password:</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>form.realName</source>
+                <target>Your real name:</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

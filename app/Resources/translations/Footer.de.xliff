@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>footer.version</source>
+                <target>Version:</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>footer.oss-hint</source>
+                <target>oTranCe ist eine freie Online-Übersetzungsplattform</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>footer.homepage</source>
+                <target>oTranCe Homepage</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>footer.team</source>
+                <target>Das Entwickler-Team</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>footer.donate</source>
+                <target>Spenden</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

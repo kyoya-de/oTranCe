@@ -1,15 +1,15 @@
 otc_web:
     resource: "@OtcWebBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}/
 
 otc_user:
     resource: "@OtcUserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}/
 
 otc_core:
     resource: "@OtcCoreBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}/
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-    prefix: /
+    prefix: /{_locale}/
