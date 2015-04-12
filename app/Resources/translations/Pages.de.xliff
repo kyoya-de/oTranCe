@@ -6,16 +6,12 @@
                 <source>layout.pages.start</source>
                 <target>Start</target>
             </trans-unit>
-            <trans-unit id="2">
-                <source>layout.pages.configuration</source>
-                <target>Konfiguration</target>
-            </trans-unit>
             <trans-unit id="3">
-                <source>layout.pages.configuration.common</source>
-                <target>Allgemein</target>
+                <source>layout.profile.settings</source>
+                <target>Einstellungen</target>
             </trans-unit>
             <trans-unit id="4">
-                <source>layout.pages.configuration.languages</source>
+                <source>layout.profile.languages</source>
                 <target>Sprachen</target>
             </trans-unit>
             <trans-unit id="5">
@@ -85,6 +81,18 @@
             <trans-unit id="21">
                 <source>layout.switch_to_content</source>
                 <target>Zum Inhalt wechseln</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>layout.profile.show</source>
+                <target>Profil anzeigen</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>layout.profile.edit</source>
+                <target>Profil aktualisieren</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>layout.profile.change_password</source>
+                <target>Kennwort ändern</target>
             </trans-unit>
         </body>
     </file>

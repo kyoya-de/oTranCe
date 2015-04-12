@@ -10,7 +10,7 @@
         <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
             <fieldset>
                 <legend>{{ 'registration.title'|trans }}</legend>
-                <div class="input-box">
+                <div class="user-box">
                     {% set formErrors = form_errors(form.username) %}
                     <div class="input clearfix{% if formErrors is not empty %} error{% endif %}">
                         {{ form_label(form.username) }}

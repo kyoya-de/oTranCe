@@ -1,0 +1,77 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <h1 class="iconized user">{{ 'profile.show.heading'|trans }}</h1>
+    <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+        <table class="table-box">
+            <tr class="row">
+                <th colspan="2" class="head">{{ 'profile.edit.title'|trans }}</th>
+            </tr>
+
+            {% set formError = form_errors(form.username) %}
+            <tr class="row">
+                <td class="cell">
+                    {{ form_label(form.username) }}
+                </td>
+                <td class="cell{% if formError is not empty %} error{% endif %}">
+                    {{ form_widget(form.username) }}
+                    {% if formError is not empty %}
+                        <div>{{ formError|raw }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            {% set formError = form_errors(form.realName) %}
+            <tr class="row">
+                <td class="cell">
+                    {{ form_label(form.realName) }}
+                </td>
+                <td class="cell{% if formError is not empty %} error{% endif %}">
+                    {{ form_widget(form.realName) }}
+                    {% if formError is not empty %}
+                        <div>{{ formError|raw }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            {% set formError = form_errors(form.email) %}
+            <tr class="row">
+                <td class="cell">
+                    {{ form_label(form.email) }}
+                </td>
+                <td class="cell{% if formError is not empty %} error{% endif %}">
+                    {{ form_widget(form.email) }}
+                    {% if formError is not empty %}
+                        <div>{{ formError|raw }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            {% set formError = form_errors(form.current_password) %}
+            <tr class="row">
+                <td class="cell">
+                    {{ form_label(form.current_password) }}
+                </td>
+                <td class="cell{% if formError is not empty %} error{% endif %}">
+                    {{ form_widget(form.current_password) }}
+                    {% if formError is not empty %}
+                        <div>{{ formError|raw }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr class="row"></tr>
+
+            <tr class="row">
+                <td class="row"></td>
+                <td class="cell">
+                    <button type="submit">
+                        <img src="{{ asset('bundles/otcweb/img/icons/save.png') }}"> {{ 'profile.edit.submit'|trans }}
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

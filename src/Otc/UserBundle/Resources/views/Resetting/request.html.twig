@@ -9,7 +9,7 @@
     <div class="login-box">
         <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
             <fieldset>
-                <div class="input-box">
+                <div class="user-box">
                     <div class="input clearfix{% if invalid_username is defined %} error{% endif %}">
                         <label for="username">{{ 'resetting.request.username'|trans }}</label>
                         <input type="text" id="username" name="username" required="required"/>

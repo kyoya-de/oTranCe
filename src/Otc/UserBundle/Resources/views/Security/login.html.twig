@@ -13,7 +13,7 @@
         <form action="{{ path("fos_user_security_check") }}" method="post">
             <fieldset>
                 <legend>{{ 'security.login.title'|trans }}</legend>
-                <div class="input-box">
+                <div class="user-box">
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
 
                     <div class="input clearfix">

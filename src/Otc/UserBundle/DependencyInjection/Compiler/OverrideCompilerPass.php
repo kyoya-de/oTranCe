@@ -19,6 +19,8 @@ class OverrideCompilerPass implements CompilerPassInterface
     {
         $definition = $container->getDefinition('fos_user.registration.form.type');
         $definition->setClass('Otc\UserBundle\Form\Type\RegistrationFormType');
-        // TODO: Implement process() method.
+
+        $definition = $container->getDefinition('fos_user.profile.form.type');
+        $definition->setClass('Otc\UserBundle\Form\Type\ProfileFormType');
     }
 }

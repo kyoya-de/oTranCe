@@ -95,6 +95,26 @@
                 <source>resetting.title</source>
                 <target>Reset password</target>
             </trans-unit>
+
+            <trans-unit id="23">
+                <source>profile.show.heading</source>
+                <target>User profile</target>
+            </trans-unit>
+
+            <trans-unit id="24">
+                <source>profile.show.realName</source>
+                <target>Your real name:</target>
+            </trans-unit>
+
+            <trans-unit id="25">
+                <source>profile.edit.title</source>
+                <target>Update your profile</target>
+            </trans-unit>
+
+            <trans-unit id="26">
+                <source>change_password.title</source>
+                <target>Change your password</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

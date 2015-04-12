@@ -25,7 +25,8 @@
     "gedmo/doctrine-extensions": "2.4.0",
     "friendsofsymfony/rest-bundle": "1.5.3",
     "friendsofsymfony/user-bundle": "~2.0@dev",
-    "jms/serializer-bundle": "0.13.0"
+    "jms/serializer-bundle": "0.13.0",
+    "kyoya-de/date-time":"~1.0"
   },
   "require-dev": {
     "sensio/generator-bundle": "~2.3",

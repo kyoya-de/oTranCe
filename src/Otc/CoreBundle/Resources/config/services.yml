@@ -1,8 +1,10 @@
+parameters:
+    otc_core.datetime_format_extension.class: Otc\CoreBundle\Twig\DateFormatExtension
 services:
-#    otc_core.example:
-#        class: Otc\CoreBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
 
-    otc_core.tanslation.locales:
-        class: stdClass
-        arguments: [@translator]
+    otc_core.datetime_format_extension:
+        class: %otc_core.datetime_format_extension.class%
+        arguments: [@service_container]
+        public: false
+        tags:
+            - { name: twig.extension }

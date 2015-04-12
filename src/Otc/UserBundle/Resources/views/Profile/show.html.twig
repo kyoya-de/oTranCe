@@ -1,0 +1,15 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <h1 class="iconized user">{{ 'profile.show.heading'|trans }}</h1>
+    <div class="boxed-50">
+        <div>
+            <div class="line"><span class="fa fa-grey fa-user"></span> {{ user.username }}</div>
+            <div class="line"><span class="fa fa-grey fa-at"></span> {{ user.email }}</div>
+            <div class="line"><span class="fa fa-grey fa-user-secret"></span> {{ user.realName }}</div>
+            <div class="line"><span class="fa fa-grey fa-clock-o"></span> {{ formatDate(user.lastLogin, {"date":"full", "time":"medium"}) }}</div>
+        </div>
+    </div>
+{% endblock %}
