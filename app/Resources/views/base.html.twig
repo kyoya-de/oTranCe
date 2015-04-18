@@ -62,12 +62,12 @@
                             {% set requestParams = app.request.request %}
                         {% endif %}
                         <li>
-                            <a href="{{ path(app.request.get('_route'), {'_locale':'de'}|merge(requestParams.all)) }}">
+                            <a href="{{ path('otc_web_homepage', {'_locale':'de'}) }}">
                                 {{ 'de'|trans({}, 'Languages') }}
                             </a>
                         </li>
                         <li>
-                            <a href="{{ path(app.request.get('_route'), {'_locale':'en'}|merge(requestParams.all)) }}">
+                            <a href="{{ path('otc_web_homepage', {'_locale':'en'}) }}">
                                 {{ 'en'|trans({}, 'Languages') }}
                             </a>
                         </li>
@@ -100,6 +100,14 @@
 
                     {% else %}
                         <a href="{{ path('fos_user_security_login') }}">{{ 'layout.security.login'|trans({}, 'FOSUserBundle') }}</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="{{ path('fos_user_registration_register') }}">{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('fos_user_resetting_request') }}">{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}</a>
+                            </li>
+                        </ul>
                     {% endif %}
                 </li>
             </ul>

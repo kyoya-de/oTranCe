@@ -16,7 +16,7 @@
                         {{ form_label(form.username) }}
                         {{ form_widget(form.username) }}
                         {% if formErrors is not empty %}
-                            <div>{{ formErrors|raw }}</div>
+                            <div class="message">{{ formErrors|raw }}</div>
                         {% endif %}
                     </div>
 
@@ -25,7 +25,7 @@
                         {{ form_label(form.plainPassword.first) }}
                         {{ form_widget(form.plainPassword.first) }}
                         {% if formErrors is not empty %}
-                            <div>{{ formErrors|raw }}</div>
+                            <div class="message">{{ formErrors|raw }}</div>
                         {% endif %}
                     </div>
 
@@ -34,7 +34,7 @@
                         {{ form_label(form.plainPassword.second) }}
                         {{ form_widget(form.plainPassword.second) }}
                         {% if formErrors is not empty %}
-                            <div>{{ formErrors|raw }}</div>
+                            <div class="message">{{ formErrors|raw }}</div>
                         {% endif %}
                     </div>
 
@@ -43,7 +43,7 @@
                         {{ form_label(form.realName) }}
                         {{ form_widget(form.realName) }}
                         {% if formErrors is not empty %}
-                            <div>{{ formErrors|raw }}</div>
+                            <div class="message">{{ formErrors|raw }}</div>
                         {% endif %}
                     </div>
 
@@ -52,7 +52,7 @@
                         {{ form_label(form.email) }}
                         {{ form_widget(form.email) }}
                         {% if formErrors is not empty %}
-                            <div>{{ formErrors|raw }}</div>
+                            <div class="message">{{ formErrors|raw }}</div>
                         {% endif %}
                     </div>
 

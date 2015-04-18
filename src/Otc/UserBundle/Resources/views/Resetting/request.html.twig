@@ -14,7 +14,7 @@
                         <label for="username">{{ 'resetting.request.username'|trans }}</label>
                         <input type="text" id="username" name="username" required="required"/>
                         {% if invalid_username is defined %}
-                            <div>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</div>
+                            <div class="message">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</div>
                         {% endif %}
                     </div>
                     <div class="input clearfix">

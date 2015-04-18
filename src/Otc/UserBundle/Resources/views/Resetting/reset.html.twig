@@ -1,0 +1,39 @@
+{% set pageClass = 'login' %}
+
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <h1>{{ 'resetting.email.subject'|trans }}</h1>
+    <div class="login-box">
+        <form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_resetting_reset">
+            <fieldset>
+                <div class="user-box">
+                    {% set formError = form_errors(form.plainPassword.first) %}
+                    <div class="input clearfix{% if formError is not empty %} error{% endif %}">
+                        {{ form_label(form.plainPassword.first) }}
+                        {{ form_widget(form.plainPassword.first) }}
+                        {% if formError is not empty %}
+                            <div class="message">{{ formError|raw }}</div>
+                        {% endif %}
+                    </div>
+
+                    {% set formError = form_errors(form.plainPassword.second) %}
+                    <div class="input clearfix{% if formError is not empty %} error{% endif %}">
+                        {{ form_label(form.plainPassword.second) }}
+                        {{ form_widget(form.plainPassword.second) }}
+                        {% if formError is not empty %}
+                            <div class="message">{{ formError|raw }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="input clearfix">
+                        <label></label>
+                        <input type="submit" value="{{ 'resetting.reset.submit'|trans }}"/>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock fos_user_content %}

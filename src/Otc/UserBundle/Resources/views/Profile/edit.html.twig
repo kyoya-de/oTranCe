@@ -18,7 +18,7 @@
                 <td class="cell{% if formError is not empty %} error{% endif %}">
                     {{ form_widget(form.username) }}
                     {% if formError is not empty %}
-                        <div>{{ formError|raw }}</div>
+                         <div class="message">{{ formError|raw }}</div>
                     {% endif %}
                 </td>
             </tr>
@@ -31,7 +31,7 @@
                 <td class="cell{% if formError is not empty %} error{% endif %}">
                     {{ form_widget(form.realName) }}
                     {% if formError is not empty %}
-                        <div>{{ formError|raw }}</div>
+                         <div class="message">{{ formError|raw }}</div>
                     {% endif %}
                 </td>
             </tr>
@@ -44,7 +44,7 @@
                 <td class="cell{% if formError is not empty %} error{% endif %}">
                     {{ form_widget(form.email) }}
                     {% if formError is not empty %}
-                        <div>{{ formError|raw }}</div>
+                         <div class="message">{{ formError|raw }}</div>
                     {% endif %}
                 </td>
             </tr>
@@ -57,7 +57,7 @@
                 <td class="cell{% if formError is not empty %} error{% endif %}">
                     {{ form_widget(form.current_password) }}
                     {% if formError is not empty %}
-                        <div>{{ formError|raw }}</div>
+                         <div class="message">{{ formError|raw }}</div>
                     {% endif %}
                 </td>
             </tr>
