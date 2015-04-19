@@ -1,5 +1,5 @@
 # oTranCe, the online translation center for your project #
-=======================================================
+===========================================================
 
 oTranCe offers a ready to go and entirely web based translation platform to your project and your translators. The files you already translated can be imported easily and exported to language packages at any time. In case you are using a versioning system, updating your repository is just a mouse click.
 
