@@ -5,7 +5,7 @@ oTranCe offers a ready to go and entirely web based translation platform to your
 
 All your translators will need is just a log in so they can start working on the translations straight away. The administrator is able to adjust very fine-grained rights and roles for your developers and interpreters.
 
-== Features: ==
+### Features:
 * web based
 * translate phrases from anywhere using your browser
 * import language files
@@ -13,11 +13,14 @@ All your translators will need is just a log in so they can start working on the
 * commit changes to a repository (subversion)
 * set translator rights fine grained
 
-== Project website == <br>
+### Development VM
+https://github.com/kyoya-de/otc-dev-vm
+
+### Project website
 http://otrance.org
 
-== Installation == <br>
+### Installation
 https://mysqldumper.jira.com/wiki/display/OTC/Installation
 
-== Help translating oTranCe == <br>
+### Help translating oTranCe
 http://translate.otrance.org/
