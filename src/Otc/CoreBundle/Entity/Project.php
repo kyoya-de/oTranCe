@@ -3,6 +3,7 @@ namespace Otc\CoreBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Otc\UserBundle\Entity\User;
 
 /**
  * Class Project
@@ -52,6 +53,14 @@ class Project
     private $logo = "";
 
     /**
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="Otc\UserBundle\Entity\User", inversedBy="ownProjects")
+     * @ORM\JoinColumn(referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $owner;
+
+    /**
      * @var Language
      *
      * @ORM\ManyToOne(targetEntity="Otc\CoreBundle\Entity\Language")
@@ -74,17 +83,24 @@ class Project
     private $keyGroups;
 
     /**
+     * @var User[]|ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Otc\CoreBundle\Entity\UserProjectRights", mappedBy="project")
+     */
+    private $userRights;
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->keyGroups = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->userRights = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -107,7 +123,7 @@ class Project
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
     public function getName()
     {
@@ -130,7 +146,7 @@ class Project
     /**
      * Get email
      *
-     * @return string
+     * @return string 
      */
     public function getEmail()
     {
@@ -153,7 +169,7 @@ class Project
     /**
      * Get url
      *
-     * @return string
+     * @return string 
      */
     public function getUrl()
     {
@@ -176,7 +192,7 @@ class Project
     /**
      * Get logo
      *
-     * @return string
+     * @return string 
      */
     public function getLogo()
     {
@@ -199,11 +215,34 @@ class Project
     /**
      * Get fillUntranslated
      *
-     * @return boolean
+     * @return boolean 
      */
     public function getFillUntranslated()
     {
         return $this->fillUntranslated;
+    }
+
+    /**
+     * Set owner
+     *
+     * @param \Otc\UserBundle\Entity\User $owner
+     * @return Project
+     */
+    public function setOwner(\Otc\UserBundle\Entity\User $owner = null)
+    {
+        $this->owner = $owner;
+
+        return $this;
+    }
+
+    /**
+     * Get owner
+     *
+     * @return \Otc\UserBundle\Entity\User 
+     */
+    public function getOwner()
+    {
+        return $this->owner;
     }
 
     /**
@@ -222,7 +261,7 @@ class Project
     /**
      * Get defaultLanguage
      *
-     * @return \Otc\CoreBundle\Entity\Language
+     * @return \Otc\CoreBundle\Entity\Language 
      */
     public function getDefaultLanguage()
     {
@@ -255,10 +294,43 @@ class Project
     /**
      * Get keyGroups
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getKeyGroups()
     {
         return $this->keyGroups;
+    }
+
+    /**
+     * Add userRights
+     *
+     * @param \Otc\CoreBundle\Entity\UserProjectRights $userRights
+     * @return Project
+     */
+    public function addUserRight(\Otc\CoreBundle\Entity\UserProjectRights $userRights)
+    {
+        $this->userRights[] = $userRights;
+
+        return $this;
+    }
+
+    /**
+     * Remove userRights
+     *
+     * @param \Otc\CoreBundle\Entity\UserProjectRights $userRights
+     */
+    public function removeUserRight(\Otc\CoreBundle\Entity\UserProjectRights $userRights)
+    {
+        $this->userRights->removeElement($userRights);
+    }
+
+    /**
+     * Get userRights
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUserRights()
+    {
+        return $this->userRights;
     }
 }
